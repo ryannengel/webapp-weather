@@ -145,7 +145,7 @@ $.simpleWeather({
       
       // Display Data
       $('#cheney .city').text(weather.city);
-      $('#cheney .temp').text(weather.temp);
+      $('#cheney .temp').text(weather.temp + " °F");
         //Display Icon
       $('#cheney i').addClass( 'icon-' + weather.code );
 
@@ -167,10 +167,10 @@ $.simpleWeather({
     success: function(weather) {
       
       // Display Data
-      $('#cheney .city').text(weather.city);
-      $('#cheney .temp').text(weather.temp);
+      $('#spokane .city').text(weather.city);
+      $('#spokane .temp').text(weather.temp + " °F");
         //Display Icon
-      $('#cheney i').addClass( 'icon-' + weather.code );
+      $('#spokane i').addClass( 'icon-' + weather.code );
 
     
       // Entire weather object
@@ -181,6 +181,59 @@ $.simpleWeather({
     }
   
   });
+
+// CHECK FOR GEOLOCATION
+if ('geolocation' in navigator) {
+
+$('.geo button').show(); 
+
+} else {
+
+$('.geo button').hide();
+$('.geo').prepend('<p>Geolocation Not Supported</p>');
+
+}
+
+//GET GEOLOCATION
+$('.geo button').click( function() {
+  
+     
+    //load weather using your lat/lng coordinates
+    navigator.geolocation.getCurrentPosition(function(position) {
+        getWeather(position.coords.latitude+','+position.coords.longitude); 
+    });
+   
+});
+
+
+//GET GEO WEATHER
+var getWeather = function(location) {
+
+    $.simpleWeather({
+    location: location,
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      
+      // Display Data
+      $('.geo .city').text(weather.city);
+      $('.geo .temp').text(weather.temp + " °F");
+        //Display Icon
+      $('.geo i').addClass( 'icon-' + weather.code );
+
+    
+      // Entire weather object
+      console.log();
+    },
+    error: function(error) {
+      // Show if weather cannot be retreived
+    }
+  
+  });
+
+};
+
+
 
 
 
