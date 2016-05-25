@@ -159,6 +159,28 @@ $.simpleWeather({
   
   });
 
+//GET SPOKANE WEATHER
+$.simpleWeather({
+    location: '99201',
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      
+      // Display Data
+      $('#cheney .city').text(weather.city);
+      $('#cheney .temp').text(weather.temp);
+        //Display Icon
+      $('#cheney i').addClass( 'icon-' + weather.code );
+
+    
+      // Entire weather object
+      console.log();
+    },
+    error: function(error) {
+      // Show if weather cannot be retreived
+    }
+  
+  });
 
 
 
