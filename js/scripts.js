@@ -152,6 +152,17 @@ $.simpleWeather({
       $('#d1 .day').text(weather.forecast[1].date);
       $('#d1 .temp').text(weather.forecast[1].high + " °F");
       $('#d1 i').addClass( 'icon-' + weather.forecast[1].code );
+        //ADD CUSTOM BODY CLASS
+      if(weather.code >= 26 && weather.code <= 30){
+      
+          $('body').removeClass();
+          $('body').addClass('bg-1');
+      
+      }
+        
+        
+        
+        
       // Entire weather object
       console.log();
     },
