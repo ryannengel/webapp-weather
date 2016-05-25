@@ -148,8 +148,10 @@ $.simpleWeather({
       $('#cheney .temp').text(weather.temp + " °F");
         //Display Icon
       $('#cheney i').addClass( 'icon-' + weather.code );
-
-    
+        //Get Forecast
+      $('#d1 .day').text(weather.forecast[1].date);
+      $('#d1 .temp').text(weather.forecast[1].high + " °F");
+      $('#d1 i').addClass( 'icon-' + weather.forecast[1].code );
       // Entire weather object
       console.log();
     },
