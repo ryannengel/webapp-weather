@@ -15,8 +15,6 @@
 }
 
 
- /*CUSTOM BACKGROUND*/
-
 
 /*COLOR
 off white: #e2dfd3
@@ -33,7 +31,8 @@ body{
     background: #4a7768;
     width: 70%;
     margin: 0 auto;
-    
+    text-align: center;
+    font-size: 3em;
 }
 
 
@@ -45,5 +44,10 @@ h1{
 #title,
 h3{
     color: #95b8a8
+}
+
+h3 {
+    padding-bottom: 5px;
+    border-bottom: solid #95b8a8 1px;
 }
 
