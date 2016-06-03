@@ -174,7 +174,7 @@ $.simpleWeather({
 
 //GET SPOKANE WEATHER
 $.simpleWeather({
-    location: '99201',
+    location: '99337',
     woeid: '',
     unit: 'f',
     success: function(weather) {
