@@ -172,7 +172,7 @@ $.simpleWeather({
   
   });
 
-//GET SPOKANE WEATHER
+//GET KENN WEATHER
 $.simpleWeather({
     location: '99337',
     woeid: '',
@@ -184,7 +184,10 @@ $.simpleWeather({
       $('#spokane .temp').text(weather.temp + " °F");
         //Display Icon
       $('#spokane i').addClass( 'icon-' + weather.code );
-
+        //Get Forecast
+      $('#d2 .day').text(weather.forecast[1].date);
+      $('#d2 .temp').text(weather.forecast[1].high + " °F");
+      $('#d2 i').addClass( 'icon-' + weather.forecast[1].code );
     
       // Entire weather object
       console.log();
@@ -233,6 +236,10 @@ var getWeather = function(location) {
       $('.geo .temp').text(weather.temp + " °F");
         //Display Icon
       $('.geo i').addClass( 'icon-' + weather.code );
+        //Get Forecast
+      $('#d3 .day').text(weather.forecast[1].date);
+      $('#d3 .temp').text(weather.forecast[1].high + " °F");
+      $('#d3 i').addClass( 'icon-' + weather.forecast[1].code );
 
     
       // Entire weather object
