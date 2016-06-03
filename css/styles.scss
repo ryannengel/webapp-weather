@@ -32,7 +32,6 @@ body{
     width: 70%;
     margin: 0 auto;
     text-align: center;
-    font-size: 3em;
 }
 
 
@@ -49,5 +48,18 @@ h3{
 h3 {
     padding-bottom: 5px;
     border-bottom: solid #95b8a8 1px;
+    width: 30%;
+    margin: 0 auto;
 }
 
+#city1,
+#city2 {
+    font-size: 3em;
+}
+
+#temp1,
+#temp2 {
+    font-size: 3em;
+    text-decoration: none;
+    list-style: none;
+}
